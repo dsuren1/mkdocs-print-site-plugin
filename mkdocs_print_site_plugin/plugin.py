@@ -8,7 +8,6 @@ from mkdocs.config import config_options
 from mkdocs.structure.files import File
 from mkdocs.structure.pages import Page
 from mkdocs.utils import write_file, copy_file, get_relative_url, warning_filter
-from mkdocs.exceptions import PluginError
 
 from mkdocs_print_site_plugin.renderer import Renderer
 from mkdocs_print_site_plugin.utils import flatten_nav, get_theme_name
@@ -295,7 +294,7 @@ class PrintSitePlugin(BasePlugin):
             msg = "Could not find a template context.\n"
             msg += "Report an issue at https://github.com/timvink/mkdocs-print-site-plugin\n"
             msg += f"And mention the template you're using: {get_theme_name(config)}"
-            raise PluginError(msg)
+            raise Exception(msg)
 
         # Add print-site.js
         js_output_base_path = os.path.join(config["site_dir"], "js")
