@@ -33,7 +33,7 @@ setup(
         "Topic :: Documentation",
         "Topic :: Text Processing",
     ],
-    install_requires=["mkdocs-material>=3.0.0"],
+    install_requires=["mkdocs-material>=7.3.0"],
     packages=find_packages(),
     entry_points={
         "mkdocs.plugins": [
